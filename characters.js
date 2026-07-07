@@ -12,12 +12,6 @@ const CHARACTER_POOLS = {
         img: `img/acnh/character_${i + 1}.jpg`
     })),
 
-    arcane: Array.from({ length: 45 }, (_, i) => ({
-        id: `arcane_${i + 1}`,
-        name: `Charakter ${i + 1}`,
-        img: `img/arcane/character_${i + 1}.jpg`
-    })),
-
     disney: Array.from({ length: 45 }, (_, i) => ({
         id: `disney_${i + 1}`,
         name: `Charakter ${i + 1}`,
@@ -30,22 +24,10 @@ const CHARACTER_POOLS = {
         img: `img/genshin/character_${i + 1}.jpg`
     })),
 
-    mc: Array.from({ length: 45 }, (_, i) => ({
-        id: `mc_${i + 1}`,
-        name: `Charakter ${i + 1}`,
-        img: `img/mc/character_${i + 1}.jpg`
-    })),
-
     mlbb: Array.from({ length: 45 }, (_, i) => ({
         id: `mlbb_${i + 1}`,
         name: `Charakter ${i + 1}`,
         img: `img/mlbb/character_${i + 1}.jpg`
-    })),
-
-    mh: Array.from({ length: 45 }, (_, i) => ({
-        id: `mh_${i + 1}`,
-        name: `Charakter ${i + 1}`,
-        img: `img/mh/character_${i + 1}.jpg`
     })),
 
     mha: Array.from({ length: 45 }, (_, i) => ({
