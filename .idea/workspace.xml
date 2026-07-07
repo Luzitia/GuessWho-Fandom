@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="781218b1-41ed-4db1-87a4-fe0e28d97cee" name="Changes" comment="Alles anders basically" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "git-widget-placeholder": "master",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Neuanfang :')">
+      <option name="closed" value="true" />
+      <created>1783438181604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1783438181604</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Startseite">
+      <option name="closed" value="true" />
+      <created>1783439256448</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1783439256448</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Startseite">
+      <option name="closed" value="true" />
+      <created>1783439516543</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1783439516543</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Lobby erstellen">
+      <option name="closed" value="true" />
+      <created>1783439901834</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1783439901834</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Online verbindung">
+      <option name="closed" value="true" />
+      <created>1783451372977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1783451372977</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Online verbindung">
+      <option name="closed" value="true" />
+      <created>1783452356900</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1783452356900</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Spiel game">
+      <option name="closed" value="true" />
+      <created>1783454236546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1783454236546</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Alles anders basically">
+      <option name="closed" value="true" />
+      <created>1783455748897</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1783455748897</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Neuanfang :')" />
+    <MESSAGE value="Startseite" />
+    <MESSAGE value="Lobby erstellen" />
+    <MESSAGE value="Online verbindung" />
+    <MESSAGE value="Spiel game" />
+    <MESSAGE value="Alles anders basically" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alles anders basically" />
+  </component>
+</project>
