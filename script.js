@@ -50,10 +50,8 @@ btnCreateRoom.addEventListener('click', () => {
         hostConnected: true,
         guestConnected: false
     }).then(() => {
-        alert(`Raum ${roomCode} wurde in der Cloud erstellt!\n\nDu wirst jetzt weitergeleitet...`);
-
-        // Weiterleitung zur jeweiligen Fandom-Seite mit Parametern in der URL
-        window.location.href = `${selectedFandom}.html?room=${roomCode}&role=host`;
+        // Weiterleitung zur Spielseite mit Parametern in der URL
+        window.location.href = `game.html?room=${roomCode}&role=host&fandom=${selectedFandom}`;
     }).catch(error => {
         console.error("Fehler beim Erstellen des Raums:", error);
     });
@@ -76,16 +74,19 @@ btnJoinRoom.addEventListener('click', () => {
         if (snapshot.exists()) {
             const roomData = snapshot.val();
 
+            if (roomData.guestConnected) {
+                alert("Dieser Raum ist bereits voll!");
+                return;
+            }
+
             // Dem Raum in Firebase mitteilen, dass ein Gast beitritt
             database.ref('rooms/' + enteredCode).update({
                 guestConnected: true,
                 status: "playing"
             });
 
-            alert(`Erfolgreich Raum ${enteredCode} gefunden! Thema ist: ${roomData.fandom}`);
-
-            // Weiterleitung zur passenden Fandom-Seite als Gast
-            window.location.href = `${roomData.fandom}.html?room=${enteredCode}&role=guest`;
+            // Weiterleitung zur Spielseite als Gast
+            window.location.href = `game.html?room=${enteredCode}&role=guest&fandom=${roomData.fandom}`;
         } else {
             alert("Dieser Raum-Code existiert nicht!");
         }
