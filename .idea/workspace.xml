@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="781218b1-41ed-4db1-87a4-fe0e28d97cee" name="Changes" comment="Alles anders basically" />
+    <list default="true" id="781218b1-41ed-4db1-87a4-fe0e28d97cee" name="Changes" comment="Alles anders basically">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/characters.js" beforeDir="false" afterPath="$PROJECT_DIR$/characters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/paper.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/paper.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783456387843</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Alles anders basically">
+      <option name="closed" value="true" />
+      <created>1783456731513</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1783456731513</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -6,11 +6,57 @@
 // Platzhalter-Einträge sind bereits als Beispiel für "acnh" vorbereitet (40 Stück).
 
 const CHARACTER_POOLS = {
-    acnh: Array.from({ length: 45 }, (_, i) => ({
-        id: `acnh_${i + 1}`,
-        name: `Bewohner ${i + 1}`,
-        img: `img/acnh/character_${i + 1}.jpg`
-    })),
+    acnh: [
+        // Manuell eingetragene, echte Charaktere:
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+        { id: "acnh_tom_nook", name: "Tom Nook", img: "img/tomnook.jpg" },
+    ],
 
     disney: Array.from({ length: 45 }, (_, i) => ({
         id: `disney_${i + 1}`,
@@ -43,4 +89,4 @@ const CHARACTER_POOLS = {
     }))
 };
 
-const BOARD_SIZE = 42; // Anzahl Charaktere, die tatsächlich auf dem Spielbrett landen
+const BOARD_SIZE = 42;
