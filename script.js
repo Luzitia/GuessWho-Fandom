@@ -1,24 +1,30 @@
-// Variablen für die Auswahl speichern
+const firebaseConfig = {
+    apiKey: "AIzaSyAaplM2DUxEw1STZ2J_BdK0Hx1OApRykXk",
+    authDomain: "guesswho-f5e5e.firebaseapp.com",
+    databaseURL: "https://guesswho-f5e5e-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "guesswho-f5e5e",
+    storageBucket: "guesswho-f5e5e.firebasestorage.app",
+    messagingSenderId: "649791258212",
+    appId: "1:649791258212:web:5fcf94cea7f822dfdba971"
+};
+
+// Firebase initialisieren
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
 let selectedFandom = null;
 
-// 1. Fandom-Auswahl Logik
+// 1. Fandom Auswahl
 const fandomCards = document.querySelectorAll('.fandom-card');
-
 fandomCards.forEach(card => {
     card.addEventListener('click', () => {
-        // Vorherige Auswahl aufheben
         fandomCards.forEach(c => c.classList.remove('selected'));
-
-        // Neue Karte auswählen
         card.classList.add('selected');
-        // Das gewählte Fandom aus dem "data-fandom" Attribut auslesen (genshin, mha, acnh)
         selectedFandom = card.getAttribute('data-fandom');
-
-        console.log("Ausgewähltes Fandom:", selectedFandom);
     });
 });
 
-// 2. Funktion um einen zufälligen Raum-Code zu generieren (z.B. A8F3)
+// Code Generator
 function generateRoomCode() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
@@ -28,7 +34,7 @@ function generateRoomCode() {
     return result;
 }
 
-// 3. "Raum erstellen" Button
+// 2. RAUM ERSTELLEN (In Firebase speichern)
 const btnCreateRoom = document.getElementById('btn-create-room');
 btnCreateRoom.addEventListener('click', () => {
     if (!selectedFandom) {
@@ -37,17 +43,24 @@ btnCreateRoom.addEventListener('click', () => {
     }
 
     const roomCode = generateRoomCode();
-    console.log(`Raum wird erstellt! Fandom: ${selectedFandom}, Code: ${roomCode}`);
 
-    // HIER kommt im nächsten Schritt die Firebase-Verbindung hin!
-    // Fürs Erste simulieren wir den Erfolg:
-    alert(`Raum erfolgreich erstellt!\nThema: ${selectedFandom}\nCode: ${roomCode}\n\n(Im nächsten Schritt verbindet uns das mit der Echtzeit-Datenbank!)`);
+    // Wir speichern den Raum in Firebase unter "rooms/CODE"
+    database.ref('rooms/' + roomCode).set({
+        fandom: selectedFandom,
+        status: "waiting",
+        hostConnected: true,
+        guestConnected: false
+    }).then(() => {
+        alert(`Raum ${roomCode} wurde in der Cloud erstellt!\n\nDu wirst jetzt weitergeleitet...`);
 
-    // Später leiten wir hier weiter, z.B.:
-    // window.location.href = `${selectedFandom}.html?room=${roomCode}&role=host`;
+        // Weiterleitung zur jeweiligen Fandom-Seite mit Parametern in der URL
+        window.location.href = `${selectedFandom}.html?room=${roomCode}&role=host`;
+    }).catch(error => {
+        console.error("Fehler beim Erstellen des Raums:", error);
+    });
 });
 
-// 4. "Raum beitreten" Button
+// 3. RAUM BEITRETEN (In Firebase prüfen)
 const btnJoinRoom = document.getElementById('btn-join-room');
 const roomCodeInput = document.getElementById('room-code-input');
 
@@ -55,12 +68,27 @@ btnJoinRoom.addEventListener('click', () => {
     const enteredCode = roomCodeInput.value.trim().toUpperCase();
 
     if (enteredCode.length !== 4) {
-        alert("Bitte gib einen gültigen 4-stelligen Raum-Code ein!");
+        alert("Bitte gib einen 4-stelligen Code ein!");
         return;
     }
 
-    console.log("Versuche Raum beizutreten mit Code:", enteredCode);
+    // In Firebase schauen, ob dieser Raum existiert
+    database.ref('rooms/' + enteredCode).once('value').then((snapshot) => {
+        if (snapshot.exists()) {
+            const roomData = snapshot.val();
 
-    // HIER prüfen wir später via Firebase, welches Fandom zu diesem Code gehört.
-    alert(`Suche nach Raum ${enteredCode}... (Firebase-Verbindung folgt im nächsten Schritt)`);
+            // Dem Raum in Firebase mitteilen, dass ein Gast beitritt
+            database.ref('rooms/' + enteredCode).update({
+                guestConnected: true,
+                status: "playing"
+            });
+
+            alert(`Erfolgreich Raum ${enteredCode} gefunden! Thema ist: ${roomData.fandom}`);
+
+            // Weiterleitung zur passenden Fandom-Seite als Gast
+            window.location.href = `${roomData.fandom}.html?room=${enteredCode}&role=guest`;
+        } else {
+            alert("Dieser Raum-Code existiert nicht!");
+        }
+    });
 });

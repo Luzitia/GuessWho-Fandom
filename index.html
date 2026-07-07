@@ -9,19 +9,61 @@
 <body>
 
 <header>
-    <h1>Guess Who?</h1>
-    <p>Wähle ein Modus und spiele mit deinen Freunden!</p>
+    <img src="img/logo.png" alt="Guess Who" class="logo-title">
+    <p>Wähle ein Thema und spiele mit deinen Freunden!</p>
 </header>
 
 <main>
     <section class="fandom-section">
-        <h2>1. Wähle dein Fandom</h2>
+        <h2>1. Fandoms</h2>
         <div class="fandom-grid">
+
+            <div class="fandom-card" data-fandom="acnh">
+                <img src="placeholder.jpg" alt="Animal Crossing: New Horizons">
+                <div class="card-overlay">
+                    <h3>Animal Crossing</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="arcane">
+                <img src="placeholder.jpg" alt="Arcane">
+                <div class="card-overlay">
+                    <h3>Arcane</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="disney">
+                <img src="placeholder.jpg" alt="Disney">
+                <div class="card-overlay">
+                    <h3>Disney</h3>
+                </div>
+            </div>
 
             <div class="fandom-card" data-fandom="genshin">
                 <img src="placeholder.jpg" alt="Genshin Impact">
                 <div class="card-overlay">
                     <h3>Genshin Impact</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="mc">
+                <img src="placeholder.jpg" alt="Minecraft">
+                <div class="card-overlay">
+                    <h3>Minecraft</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="mlbb">
+                <img src="placeholder.jpg" alt="Mobile Legends: Bang Bang">
+                <div class="card-overlay">
+                    <h3>Mobile Legends: Bang Bang</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="mh">
+                <img src="placeholder.jpg" alt="Monster High">
+                <div class="card-overlay">
+                    <h3>Monster High</h3>
                 </div>
             </div>
 
@@ -32,10 +74,10 @@
                 </div>
             </div>
 
-            <div class="fandom-card" data-fandom="acnh">
-                <img src="placeholder.jpg" alt="Animal Crossing: New Horizons">
+            <div class="fandom-card" data-fandom="pokemon">
+                <img src="placeholder.jpg" alt="Pokémon">
                 <div class="card-overlay">
-                    <h3>Animal Crossing</h3>
+                    <h3>Pokémon</h3>
                 </div>
             </div>
 
@@ -43,7 +85,7 @@
     </section>
 
     <section class="lobby-section">
-        <h2>2. Spielraum</h2>
+        <h2>2. Lobby</h2>
 
         <div class="lobby-container">
             <div class="lobby-box">
@@ -62,6 +104,9 @@
         </div>
     </section>
 </main>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 
 <script src="script.js"></script>
 </body>
