@@ -1,0 +1,80 @@
+.game-container {
+    background-color: #2a2a35;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Team Buttons */
+.team-selection {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.team-btn {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.team-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.team-btn.blue { background-color: #0077b6; }
+.team-btn.red { background-color: #e63946; }
+.team-btn:hover:not(:disabled) { transform: scale(1.05); }
+
+/* Das Guess Who Grid */
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Charakter Karten */
+.char-card {
+    background-color: #1e1e24;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.char-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.char-card p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Wenn eine Karte im Spiel umgeklappt/deaktiviert wird */
+.char-card.flipped {
+    opacity: 0.2;
+    transform: scale(0.95);
+}

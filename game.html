@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who - Spielfeld</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<div id="lobby-screen" class="game-container">
+    <h2>Wähle dein Team</h2>
+    <p>Raum-Code: <strong id="display-room-code">----</strong></p>
+
+    <div class="team-selection">
+        <button id="btn-team-blue" class="team-btn blue">Team Blau (Beitreten)</button>
+        <button id="btn-team-red" class="team-btn red">Team Rot (Beitreten)</button>
+    </div>
+    <p id="lobby-status">Warte auf Spieler...</p>
+</div>
+
+<div id="game-screen" class="game-container hidden">
+    <header class="game-header">
+        <h3>Du bist in <span id="player-team-text">---</span></h3>
+        <div id="secret-character-box">
+            Dein geheimer Charakter: <strong id="secret-character-name">?</strong>
+        </div>
+    </header>
+
+    <div id="grid-board" class="board-grid"></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

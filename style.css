@@ -9,7 +9,7 @@
 body {
     /* Hintergrundbild vollflächig und fixiert */
     background: url('img/paper.jpg') no-repeat center center fixed;
-    background-size: ;
+    background-size: cover;
 
     color: #000000;
     padding: 20px;
@@ -22,6 +22,8 @@ body {
 header {
     text-align: center;
     margin-bottom: 40px;
+    font-size: 25px;
+    color: #173a85;
 }
 
 /* Styling für das Logo */
@@ -77,8 +79,8 @@ h2 {
 
 /* Wenn eine Karte ausgewählt wird (wichtig für später) */
 .fandom-card.selected {
-    border-color: #0d2960;
-    box-shadow: 0 0 15px rgb(13, 41, 96);
+    border-color: #c30d0d;
+    box-shadow: 0 0 15px rgb(195, 13, 13);
 }
 
 .fandom-card img {
@@ -147,7 +149,7 @@ input[type="text"] {
 }
 
 .btn:hover {
-    background-color: #081b45;
+    background-color: #c30d0d;
 }
 
 .btn-secondary {
@@ -156,5 +158,5 @@ input[type="text"] {
 }
 
 .btn-secondary:hover {
-    background-color: #081b45;
+    background-color: #c30d0d;
 }
