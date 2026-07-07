@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, set, onValue, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getDatabase, ref, set, onValue, update, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 // --- CHARAKTER POOLS ---
 const characterPools = {
@@ -36,7 +36,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const gameRef = ref(db, "games/global_room");
 
 function shuffle(array) {
     let cur = array.length, rnd;
@@ -50,50 +49,81 @@ function shuffle(array) {
 const isMenu = document.getElementById("menu-container") !== null;
 const isGame = document.getElementById("game-container") !== null;
 
-// --- MENÜ (index.html) ---
+// ==========================================
+// MENÜ-LOGIK (index.html)
+// ==========================================
 if (isMenu) {
-    const roleSelect = document.getElementById("role-select");
     const themeSelect = document.getElementById("theme-select");
-    const startBtn = document.getElementById("start-btn");
+    const createRoomBtn = document.getElementById("create-room-btn");
+    const roomInput = document.getElementById("room-input");
+    const joinRoomBtn = document.getElementById("join-room-btn");
 
-    roleSelect.addEventListener("change", (e) => {
-        themeSelect.disabled = (e.target.value === "p2");
+    // 1. RAUM ERSTELLEN (HOST = p1)
+    createRoomBtn.addEventListener("click", () => {
+        // Generiert eine zufällige 4-stellige Nummer (z.B. 2841)
+        const roomId = Math.floor(1000 + Math.random() * 9000).toString();
+        const theme = themeSelect.value;
+        const fullPool = [...characterPools[theme]];
+        const boardChars = shuffle(fullPool).slice(0, BOARD_SIZE);
+
+        const initialGameState = {
+            theme: theme,
+            board: boardChars,
+            phase: 'selecting',
+            p1TargetId: "",
+            p2TargetId: "",
+            p1Flipped: "",
+            p2Flipped: "",
+            winner: ""
+        };
+
+        const specificGameRef = ref(db, "games/" + roomId);
+        set(specificGameRef, initialGameState).then(() => {
+            sessionStorage.setItem("myRole", "p1");
+            sessionStorage.setItem("currentRoomId", roomId);
+            window.location.href = "game.html";
+        });
     });
 
-    startBtn.addEventListener("click", () => {
-        const role = roleSelect.value;
-        sessionStorage.setItem("myRole", role);
-
-        if (role === "p1") {
-            const theme = themeSelect.value;
-            const fullPool = [...characterPools[theme]];
-            const boardChars = shuffle(fullPool).slice(0, BOARD_SIZE);
-
-            const initialGameState = {
-                theme: theme,
-                board: boardChars,
-                phase: 'selecting',
-                p1TargetId: "",
-                p2TargetId: "",
-                p1Flipped: "",
-                p2Flipped: "",
-                winner: ""
-            };
-            set(gameRef, initialGameState).then(() => {
-                window.location.href = "game.html";
-            });
-        } else {
-            window.location.href = "game.html";
+    // 2. RAUM BEITRETEN (GAST = p2)
+    joinRoomBtn.addEventListener("click", () => {
+        const roomId = roomInput.value.trim();
+        if (!roomId) {
+            alert("Bitte gib einen Raum-Code ein!");
+            return;
         }
+
+        const specificGameRef = ref(db, "games/" + roomId);
+        // Prüfen, ob der Raum in Firebase überhaupt existiert
+        get(specificGameRef).then((snapshot) => {
+            if (snapshot.exists()) {
+                sessionStorage.setItem("myRole", "p2");
+                sessionStorage.setItem("currentRoomId", roomId);
+                window.location.href = "game.html";
+            } else {
+                alert("Raum-Code wurde nicht gefunden! Hat der Host das Spiel schon erstellt?");
+            }
+        }).catch((error) => {
+            alert("Fehler bei der Verbindung: " + error.message);
+        });
     });
 }
 
-// --- SPIEL (game.html) ---
+// ==========================================
+// SPIEL-LOGIK (game.html)
+// ==========================================
 if (isGame) {
     const myRole = sessionStorage.getItem("myRole") || "p1";
+    const roomId = sessionStorage.getItem("currentRoomId");
     const opponentRole = (myRole === "p1") ? "p2" : "p1";
 
+    if (!roomId) {
+        // Falls jemand die Seite direkt aufruft ohne Login
+        window.location.href = "index.html";
+    }
+
     const playerTitle = document.getElementById("player-title");
+    const roomDisplay = document.getElementById("room-display");
     const opponentCounter = document.getElementById("opponent-counter");
     const statusBanner = document.getElementById("status-banner");
     const boardContainer = document.getElementById("board");
@@ -101,12 +131,15 @@ if (isGame) {
     const globalGuessBtn = document.getElementById("global-guess-btn");
 
     playerTitle.innerText = (myRole === "p1") ? "Spieler 1 (Host)" : "Spieler 2 (Gast)";
+    roomDisplay.innerText = `Raum-Code: ${roomId}`;
+
     let guessModeActive = false;
+    const gameRef = ref(db, "games/" + roomId); // Dynamischer Verweis auf DIESEN Raum
 
     onValue(gameRef, (snapshot) => {
         const state = snapshot.val();
         if (!state) {
-            statusBanner.innerText = "Warte auf Spieler 1...";
+            statusBanner.innerText = "Fehler: Raumdaten verloren gegangen.";
             return;
         }
         renderGame(state);
@@ -137,7 +170,7 @@ if (isGame) {
                 statusBanner.innerText = "Phase 1: Klicke unten auf eine Karte, um dein Geheimnis festzulegen!";
                 statusBanner.style.backgroundColor = "#e67e22";
             } else {
-                statusBanner.innerText = "Warte auf die Wahl des Gegners...";
+                statusBanner.innerText = "Warte darauf, dass der andere Spieler seinen Charakter wählt...";
                 statusBanner.style.backgroundColor = "#95a5a6";
             }
         } else if (state.phase === 'playing') {
