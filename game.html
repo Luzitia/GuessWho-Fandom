@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who - Spiel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container" class="container">
+    <header>
+        <h1 id="player-title">Spieler ?</h1>
+        <a href="index.html" id="leave-btn">Spiel verlassen</a>
+    </header>
+
+    <div id="status-banner">Lädt...</div>
+
+    <div id="secret-card-container">
+        <h3>Dein ausgewählter Charakter:</h3>
+        <div id="secret-card" class="card empty">Noch nicht gewählt</div>
+    </div>
+
+    <h2>Spielfeld</h2>
+    <div id="board"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
