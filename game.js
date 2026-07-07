@@ -33,6 +33,7 @@ let flippedIds = new Set(); // lokal umgedrehte Karten (nur eigene Ansicht)
 
 const boardEl = document.getElementById('game-board');
 const guessBoardEl = document.getElementById('guess-board');
+const secretPickBoardEl = document.getElementById('secret-pick-board');
 const statusText = document.getElementById('status-text');
 const roomCodeDisplay = document.getElementById('room-code-display');
 const playerColorDisplay = document.getElementById('player-color-display');
@@ -103,10 +104,6 @@ function renderBoard(container, board, { clickable, mode }) {
 
 function handleCardClick(char, mode) {
     if (mode === 'main') {
-        if (pickingSecretMode) {
-            pickSecretCharacter(char);
-            return;
-        }
         // Karte lokal umdrehen (kein Firebase-Sync nötig, ist nur eigene Merkhilfe)
         if (flippedIds.has(char.id)) {
             flippedIds.delete(char.id);
@@ -117,6 +114,8 @@ function handleCardClick(char, mode) {
     } else if (mode === 'guess') {
         selectedGuessId = char.id;
         renderBoard(guessBoardEl, currentBoard, { clickable: true, mode: 'guess' });
+    } else if (mode === 'secret') {
+        pickSecretCharacter(char);
     }
 }
 
@@ -240,6 +239,7 @@ btnPickSecret.addEventListener('click', () => {
         return;
     }
     pickingSecretMode = true;
+    renderBoard(secretPickBoardEl, currentBoard, { clickable: true, mode: 'secret' });
     secretModal.classList.remove('hidden');
 });
 
