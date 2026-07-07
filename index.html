@@ -2,10 +2,67 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Guess Who - Lobby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who - Fandom</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<header>
+    <h1>Guess Who?</h1>
+    <p>Wähle ein Modus und spiele mit deinen Freunden!</p>
+</header>
+
+<main>
+    <section class="fandom-section">
+        <h2>1. Wähle dein Fandom</h2>
+        <div class="fandom-grid">
+
+            <div class="fandom-card" data-fandom="genshin">
+                <img src="placeholder.jpg" alt="Genshin Impact">
+                <div class="card-overlay">
+                    <h3>Genshin Impact</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="mha">
+                <img src="placeholder.jpg" alt="My Hero Academia">
+                <div class="card-overlay">
+                    <h3>My Hero Academia</h3>
+                </div>
+            </div>
+
+            <div class="fandom-card" data-fandom="acnh">
+                <img src="placeholder.jpg" alt="Animal Crossing: New Horizons">
+                <div class="card-overlay">
+                    <h3>Animal Crossing</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="lobby-section">
+        <h2>2. Spielraum</h2>
+
+        <div class="lobby-container">
+            <div class="lobby-box">
+                <h3>Raum erstellen</h3>
+                <p>Wähle oben ein Fandom und klicke auf Erstellen.</p>
+                <button id="btn-create-room" class="btn">Raum erstellen</button>
+            </div>
+
+            <div class="divider">oder</div>
+
+            <div class="lobby-box">
+                <h3>Raum beitreten</h3>
+                <input type="text" id="room-code-input" placeholder="Raum-Code eingeben (z.B. AB12)">
+                <button id="btn-join-room" class="btn btn-secondary">Beitreten</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

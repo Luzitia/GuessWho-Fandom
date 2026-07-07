@@ -1,0 +1,146 @@
+/* Grundtöne & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1e1e24;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ff4a5a;
+    margin-bottom: 10px;
+}
+
+main {
+    width: 100%;
+    max-width: 1000px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fca311;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Fandom Grid & Cards */
+.fandom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.fandom-card {
+    position: relative;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.fandom-card:hover {
+    transform: scale(1.03);
+    border-color: #fca311;
+}
+
+/* Wenn eine Karte ausgewählt wird (wichtig für später) */
+.fandom-card.selected {
+    border-color: #ff4a5a;
+    box-shadow: 0 0 15px rgba(255, 74, 90, 0.6);
+}
+
+.fandom-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    text-align: center;
+}
+
+/* Lobby Bereich (Erstellen / Beitreten) */
+.lobby-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #2a2a35;
+    padding: 30px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lobby-box {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.divider {
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* Inputs und Buttons */
+input[type="text"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1e1e24;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ff4a5a;
+    color: white;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #e03e4d;
+}
+
+.btn-secondary {
+    background-color: #fca311;
+    color: #1e1e24;
+}
+
+.btn-secondary:hover {
+    background-color: #e5930f;
+}
