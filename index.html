@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who - Online Lobby</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-$END$
+<div id="menu-container" class="container">
+    <h1>Guess Who - Online Lobby</h1>
+
+    <div class="menu-box">
+        <label for="role-select">Wer bist du?</label>
+        <select id="role-select">
+            <option value="p1">Spieler 1 (Host)</option>
+            <option value="p2">Spieler 2 (Beitreten)</option>
+        </select>
+
+        <label for="theme-select">Welches Thema? (Nur für Spieler 1)</label>
+        <select id="theme-select">
+            <option value="genshin">Genshin Impact</option>
+            <option value="crossing">Animal Crossing</option>
+        </select>
+
+        <button id="start-btn" class="big-btn">Spiel starten / Beitreten</button>
+    </div>
+</div>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>

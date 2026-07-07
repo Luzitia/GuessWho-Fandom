@@ -10,20 +10,29 @@
 <div id="game-container" class="container">
     <header>
         <h1 id="player-title">Spieler ?</h1>
-        <a href="index.html" id="leave-btn">Spiel verlassen</a>
+        <div id="opponent-counter">Gegner hat noch ?/4 Karten offen</div>
+        <a href="index.html" id="leave-btn">Verlassen</a>
     </header>
 
-    <div id="status-banner">Lädt...</div>
+    <div id="status-banner">Lädt Online-Sitzung...</div>
 
-    <div id="secret-card-container">
-        <h3>Dein ausgewählter Charakter:</h3>
-        <div id="secret-card" class="card empty">Noch nicht gewählt</div>
+    <div id="game-layout">
+        <div id="sidebar">
+            <div id="secret-card-container">
+                <h3>Dein geheimer Charakter:</h3>
+                <div id="secret-card" class="card empty">Wähle...</div>
+            </div>
+
+            <button id="global-guess-btn" class="big-btn" disabled>🚨 Charakter erraten / Lösen</button>
+        </div>
+
+        <div id="main-board">
+            <h2>Spielfeld</h2>
+            <div id="board"></div>
+        </div>
     </div>
-
-    <h2>Spielfeld</h2>
-    <div id="board"></div>
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
