@@ -73,7 +73,7 @@ const CHARACTER_POOLS = {
         { id: "genshin_klee", name: "Klee", img: "img/klee.jpg" },
         { id: "genshin_venti", name: "Venti", img: "img/venti.jpg" },
         { id: "genshin_razor", name: "Razor", img: "img/razor.jpg" },
-        { id: "genshin_diluc", name: "Diluc", img: "img/diluc.png" },
+        { id: "genshin_diluc", name: "Diluc", img: "img/diluc.jpg" },
         { id: "genshin_barbara", name: "Barbara", img: "img/barbara.jpg" },
         { id: "genshin_kaeya", name: "Kaeya", img: "img/kaeya.jpg" },
         { id: "genshin_lisa", name: "Lisa", img: "img/lisa.jpg" },
@@ -82,7 +82,7 @@ const CHARACTER_POOLS = {
         { id: "genshin_lumine", name: "Lumine", img: "img/lumine.jpg" },
         { id: "genshin_aether", name: "Aether", img: "img/aether.jpg" },
         { id: "genshin_xinyan", name: "Xinyan", img: "img/xinyan.jpg" },
-        { id: "genshin_diano", name: "Diona", img: "img/diana.jpg" },
+        { id: "genshin_diano", name: "Diona", img: "img/diona.jpg" },
         { id: "genshin_zhongli", name: "Zhongli", img: "img/zhongli.jpg" },
         { id: "genshin_childe", name: "Childe", img: "img/childe.jpg" },
         { id: "genshin_albedo", name: "Albedo", img: "img/albedo.jpg" },
@@ -114,12 +114,12 @@ const CHARACTER_POOLS = {
         { id: "genshin_collei", name: "Collei", img: "img/collei.jpg" },
         { id: "genshin_tighnari", name: "Tighnari", img: "img/tighnari.jpg" },
         { id: "genshin_candace", name: "Candace", img: "img/candace.jpg" },
-        { id: "genshin_nilou", name: "Nilou", img: "img/nilou.png" },
+        { id: "genshin_nilou", name: "Nilou", img: "img/nilou.jpg" },
         { id: "genshin_cyno", name: "Cyno", img: "img/cyno.jpg" },
         { id: "genshin_layla", name: "Layla", img: "img/layla.jpg" },
         { id: "genshin_nahida", name: "Nahida", img: "img/nahida.jpg" },
         { id: "genshin_faruzan", name: "Faruzan", img: "img/faruzan.jpg" },
-        { id: "genshin_scara", name: "Wanderer", img: "img/scara.jpg" },
+        { id: "genshin_scara", name: "Wanderer", img: "img/scar.jpg" },
         { id: "genshin_yaoyao", name: "Yaoyao", img: "img/yaoyao.jpg" },
         { id: "genshin_alhaitham", name: "Alhaitham", img: "img/alhaitham.jpg" },
         { id: "genshin_mika", name: "Mika", img: "img/mika.jpg" },
@@ -138,7 +138,7 @@ const CHARACTER_POOLS = {
         { id: "genshin_navia", name: "Navia", img: "img/navia.jpg" },
         { id: "genshin_gaming", name: "Gaming", img: "img/gaming.jpg" },
         { id: "genshin_xianyun", name: "Xianyun", img: "img/xianyun.jpg" },
-        { id: "genshin_chiori", name: "Chiori", img: "img/chiori.png" },
+        { id: "genshin_chiori", name: "Chiori", img: "img/chiori.jpg" },
         { id: "genshin_arlecchino", name: "Arlecchino", img: "img/arlecchino.jpg" },
         { id: "genshin_sethos", name: "Sethos", img: "img/sethos.jpg" },
         { id: "genshin_clorinde", name: "Clorinde", img: "img/clorinde.jpg" },
@@ -163,7 +163,7 @@ const CHARACTER_POOLS = {
         { id: "genshin_ineffa", name: "Ineffa", img: "img/ineffa.jpg" },
         { id: "genshin_flins", name: "Flins", img: "img/flins.jpg" },
         { id: "genshin_lauma", name: "Lauma", img: "img/lauma.jpg" },
-        { id: "genshin_aino", name: "Aino", img: "img/aino.png" },
+        { id: "genshin_aino", name: "Aino", img: "img/aino.jpg" },
         { id: "genshin_nefer", name: "Nefer", img: "img/nefer.jpg" },
         { id: "genshin_durin", name: "Durin", img: "img/durin.jpg" },
         { id: "genshin_jahoda", name: "Jahoda", img: "img/jahoda.jpg" },
@@ -219,4 +219,4 @@ const CHARACTER_POOLS = {
     }))
 };
 
-const BOARD_SIZE = 30;
+const BOARD_SIZE = 40;

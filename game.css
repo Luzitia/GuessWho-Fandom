@@ -184,7 +184,7 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.26);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,7 +214,7 @@
 
 .modal-box p {
     margin-bottom: 20px;
-    color: #333;
+    color: #333333;
 }
 
 .guess-board {
