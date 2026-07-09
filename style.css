@@ -9,7 +9,6 @@
 body {
     /* Hintergrundbild vollflächig und fixiert */
     background: url('img/paper.jpg') no-repeat center center fixed;
-    background-size: cover;
 
     color: #ffffff;
     padding: 20px;
