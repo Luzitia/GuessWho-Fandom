@@ -54,6 +54,7 @@ btnCreateRoom.addEventListener('click', () => {
         window.location.href = `game.html?room=${roomCode}&role=host&fandom=${selectedFandom}`;
     }).catch(error => {
         console.error("Fehler beim Erstellen des Raums:", error);
+        alert("Der Raum konnte nicht erstellt werden.\n\nFehler: " + error.message + "\n\nCode: " + error.code);
     });
 });
 
@@ -90,5 +91,8 @@ btnJoinRoom.addEventListener('click', () => {
         } else {
             alert("Dieser Raum-Code existiert nicht!");
         }
+    }).catch(error => {
+        console.error("Fehler beim Beitreten des Raums:", error);
+        alert("Beitreten fehlgeschlagen.\n\nFehler: " + error.message + "\n\nCode: " + error.code);
     });
 });
